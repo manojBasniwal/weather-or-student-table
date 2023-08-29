@@ -15,12 +15,12 @@ function Login() {
         }
     }
 
-    const validation = (obj) =>{
+    const validation = () =>{
         const errors = {}
-        if(name !== obj.name){
+        if(name !== name){
             errors.name = "Please enter your valid name"
         }
-        if(password !== obj.password){
+        if(password !== password){
             errors.password = "Please enter your valid password"
         }
         return errors
