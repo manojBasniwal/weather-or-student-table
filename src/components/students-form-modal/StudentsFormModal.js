@@ -51,12 +51,12 @@ function StudentsFormModal({handleData, handleClose, editData}) {
 
         <div className="form-group">
           <label htmlFor="Fname">Father Name</label>
-          <input type="text" id="Fname" placeholder="Father Name" onChange={(e)=> setFatherName(e.target.value)} vlaue={fatherName} required/>
+          <input type="text" id="Fname" placeholder="Father Name" onChange={(e)=> setFatherName(e.target.value)} value={fatherName} required/>
         </div>
 
         <div className="form-group">
           <label htmlFor="country">Class</label>
-          <select id="country" name="country" onChange={(e)=> setClassNo(e.target.value)} vlaue={classNo} required>
+          <select id="country" name="country" onChange={(e)=> setClassNo(e.target.value)} value={classNo} required>
             {CLASS.map((value)=>(<option key={value} value={value}>{value}</option>))}
           </select>
         </div>

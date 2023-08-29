@@ -3,23 +3,32 @@ import StudentsTable from 'components/students-table';
 import React, { useState } from 'react';
 import { STUDENT_LIST } from "../../constants"
 import ConfirmationModal from 'components/confirmation-modal';
+import PageWidthNavbar from 'components/page-width-navbar';
+import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
 
 function Home() {
   const [data, setData] = useState(STUDENT_LIST)
   const [modalData, setModalData] = useState(null)
   const [confirmation, setConfirmatio] = useState(false)
+  const navigate = useNavigate()
 
 
+  const reset = () => {
+    localStorage.removeItem("LOGIN_DETAILS");
+    navigate("/login")
+  }
   const addData = (obj) => {
-    console.log(obj)
     if (modalData?.index > -1) {
       setModalData({})
       data.splice(modalData?.index, 1, obj)
-  } else {
+      toast.success("Successfully edit")
+    } else {
       data.push(obj)
-  }
-  setData([...data])
-    
+      toast.success("Successfully submit")
+    }
+    setData([...data])
+
   }
 
   const handleCreateStudent = () => {
@@ -38,21 +47,25 @@ function Home() {
     const obj = data[index];
     obj.index = index
     setModalData(obj)
-    // console.log(obj)
   }
   const deleteconfirmation = () => {
     data.splice(confirmation, 1)
     setData([...data])
     setConfirmatio(false)
+    toast.success("Successfully delete")
   }
   return (
-
-    <div className='student-container'>
-      <button className="form-button" onClick={handleCreateStudent}>Add Student</button>
-      {!!modalData && <StudentsFormModal handleClose={closeModal} handleData={addData} editData={modalData}/>}
-      <StudentsTable table={data} handleDelete={deleteModal} handleEdit={editData} />
-      {!!confirmation && <ConfirmationModal handleClose={closeConfirmation} handleDelet={deleteconfirmation }/>}
-    </div>
+    <PageWidthNavbar>
+      <div className='student-container'>
+        <div className="button-section">
+          <button className="form-button" onClick={handleCreateStudent}>Add Student</button>
+          <button className="logout-button" onClick={reset}>Logout</button>
+        </div>
+        {!!modalData && <StudentsFormModal handleClose={closeModal} handleData={addData} editData={modalData} />}
+        <StudentsTable table={data} handleDelete={deleteModal} handleEdit={editData} />
+        {!!confirmation && <ConfirmationModal handleClose={closeConfirmation} handleDelet={deleteconfirmation} />}
+      </div>
+    </PageWidthNavbar>
   )
 }
 

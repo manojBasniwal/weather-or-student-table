@@ -21,3 +21,5 @@ export const STUDENT_LIST =[
         age:"14"
     }
 ]
+
+export const LOGIN_DETAILS= {name:"manoj", password:"7611829168"}

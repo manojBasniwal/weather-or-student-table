@@ -1,26 +1,32 @@
 import React, { useState } from 'react'
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+import { LOGIN_DETAILS } from "../../constants";
 
 function Login() {
 
     const [name, setName] = useState('')
     const [password, setPassword] = useState('')
     const [errors, setErrors] = useState('')
+    const navigate = useNavigate('')
 
     const handleSubmit = (event) =>{
         event.preventDefault();
         const errors = validation('');
         setErrors(errors);
         if(Object.keys(errors).length === 0){
-
+            localStorage.setItem("LOGIN_DETAILS", JSON.stringify({name: name, password: password}));
+            toast.success("Successfully Login")
+            navigate("/")
         }
     }
 
     const validation = () =>{
         const errors = {}
-        if(name !== name){
+        if(name !== LOGIN_DETAILS.name){
             errors.name = "Please enter your valid name"
         }
-        if(password !== password){
+        if(password !== LOGIN_DETAILS.password){
             errors.password = "Please enter your valid password"
         }
         return errors
