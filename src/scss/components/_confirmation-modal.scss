@@ -1,0 +1,44 @@
+.confirmation-section {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+
+    .confirmation-box {
+        padding: 50px 10px;
+        background-color: white;
+        width: 550px;
+        position: relative;
+
+        .delete-btn {
+            color: white;
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            background-color: red;
+            padding: 5px 8px;
+            border: none;
+        }
+        .close-btn{
+            color: white;
+            position: absolute;
+            bottom: 10px;
+            right: 80px;
+            background-color: green;
+            padding: 5px 8px;
+            border: none;
+        }
+    }
+
+    // p {
+    //     padding: 50px 10px;
+    //     background-color: white;
+    //     width: 550px;
+    // }
+}
