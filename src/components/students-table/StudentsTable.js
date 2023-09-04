@@ -29,8 +29,8 @@ function StudentsTable({ table, handleEdit, handleDelete }) {
                         <td>{item?.classNo}</td>
                         <td>{item?.mobilNo}</td>
                         <td>{item?.age}</td>
-                        <td><button className="edit-btn" onClick={()=>handleChange(index)}>Edit</button>
-                            <button className="edit-btn delete-btn" onClick={()=>handleClick(index)}>Delete</button>
+                        <td className="button-box"><button className="success-btn" onClick={()=>handleChange(index)}>Edit</button>
+                            <button className="delete-btn" onClick={()=>handleClick(index)}>Delete</button>
                         </td>
                     </tr>))}
                 </tbody>

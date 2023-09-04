@@ -11,34 +11,30 @@
     z-index: 1;
 
     .confirmation-box {
-        padding: 50px 10px;
         background-color: white;
-        width: 550px;
+        width: 600px;
+        border-radius: 10px;
         position: relative;
 
-        .delete-btn {
-            color: white;
-            position: absolute;
-            bottom: 10px;
-            right: 20px;
-            background-color: red;
-            padding: 5px 8px;
-            border: none;
+        .confirmation-header {
+            font-size: 20px;
+            padding: 15px;
+            border-bottom: 1px solid darkgray;
         }
-        .close-btn{
-            color: white;
-            position: absolute;
-            bottom: 10px;
-            right: 80px;
-            background-color: green;
-            padding: 5px 8px;
-            border: none;
+
+        .confirmation-body{
+            padding: 15px;
+            border-bottom: 1px solid darkgray;
+
+            p{
+                margin-block: 25px;
+                font-size: 18px;
+            }
+        }
+        .confirmation-footer {
+            display: flex;
+            justify-content: end;
+            padding: 15px;
         }
     }
-
-    // p {
-    //     padding: 50px 10px;
-    //     background-color: white;
-    //     width: 550px;
-    // }
 }

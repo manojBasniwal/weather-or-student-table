@@ -1,16 +1,21 @@
-import {useEffect} from 'react'
-import { useNavigate } from 'react-router-dom'
+import {useEffect} from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { LOGIN_DETAILS } from "../../constants";
 
 function LoginHandle() {
-    const navigate = useNavigate()
+    const navigate = useNavigate('');
+    const location = useLocation('');
+
 
     useEffect(()=>{
         const loginData = JSON.parse(localStorage.getItem("LOGIN_DETAILS"));
         if(!loginData || (loginData?.name !== LOGIN_DETAILS.name && loginData?.password !== LOGIN_DETAILS.password)){
             navigate('/login')
         }else{
-            navigate('/')
+            if(navigate === location){
+                navigate('/')
+            }
+            // navigate('/')
         }
     }, []);
   return null

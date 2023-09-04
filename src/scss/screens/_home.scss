@@ -4,28 +4,15 @@
     box-sizing: border-box;
 }
 
-.student-container{
-    .button-section{
+.student-container {
+    .button-section {
         display: flex;
-    justify-content: end;
+        justify-content: end;
+
         .form-button {
-            padding: 10px;
             margin: 10px;
             background-color: dodgerblue;
-            color: white;
             border-radius: 20px;
-            cursor: pointer;
-            border: none;
-        }
-        .logout-button {
-            padding: 10px;
-            margin: 10px;
-            background-color: red;
-            color: white;
-            border-radius: 20px;
-            cursor: pointer;
-            border: none;
         }
     }
 }
-

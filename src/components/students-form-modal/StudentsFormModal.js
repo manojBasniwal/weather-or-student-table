@@ -73,8 +73,8 @@ function StudentsFormModal({handleData, handleClose, editData}) {
         </div>
 
         <div className="button-section">
-        <button type='submit' className="button">Submit</button>
-        <button className="button close" onClick={() =>handleClose()}>Close</button>
+        <button type='submit' className="success-btn submit">Submit</button>
+        <button className="delete-btn close" onClick={() =>handleClose()}>Close</button>
         </div>
       </form>
       </div>

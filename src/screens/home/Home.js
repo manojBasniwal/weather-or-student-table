@@ -4,20 +4,13 @@ import React, { useState } from 'react';
 import { STUDENT_LIST } from "../../constants"
 import ConfirmationModal from 'components/confirmation-modal';
 import PageWidthNavbar from 'components/page-width-navbar';
-import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 
 function Home() {
   const [data, setData] = useState(STUDENT_LIST)
   const [modalData, setModalData] = useState(null)
   const [confirmation, setConfirmatio] = useState(false)
-  const navigate = useNavigate()
-
-
-  const reset = () => {
-    localStorage.removeItem("LOGIN_DETAILS");
-    navigate("/login")
-  }
+  
   const addData = (obj) => {
     if (modalData?.index > -1) {
       setModalData({})
@@ -58,8 +51,7 @@ function Home() {
     <PageWidthNavbar>
       <div className='student-container'>
         <div className="button-section">
-          <button className="form-button" onClick={handleCreateStudent}>Add Student</button>
-          <button className="logout-button" onClick={reset}>Logout</button>
+          <button className="success-btn form-button" onClick={handleCreateStudent}>Add Student</button>
         </div>
         {!!modalData && <StudentsFormModal handleClose={closeModal} handleData={addData} editData={modalData} />}
         <StudentsTable table={data} handleDelete={deleteModal} handleEdit={editData} />

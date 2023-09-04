@@ -1,7 +1,6 @@
 .topnavbar-section {
     display: flex;
-    align-items: center;
-    overflow: hidden;
+    justify-content: space-between;
     padding: 5px 10px;
     background-color: cadetblue;
 
@@ -21,11 +20,37 @@
             margin-right: 10px;
         }
     }
+    .button{
+        display: none;
+    }
+    .items-container {
+        flex: 1 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &.mobil{
+            position: absolute;
+            top: 40px;
+            right: 0;
+            left: 0;
+            flex-direction: column;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+        }
+        &.mobil .nav-items {
+            display: flex!important;
+            flex-direction: column;
+        }
+        &.mobil .delete-btn {
+            display: block!important;
+        }
+        
+    }
 
     .nav-item {
         float: left;
         color: #f2f2f2;
-        text-align: center;
         padding: 14px 16px;
         text-decoration: none;
         font-size: 17px;
@@ -34,10 +59,43 @@
             background-color: $background-color;
             color: black;
         }
-
-        &.active {
-            background-color: #04AA6D;
-            color: white;
-        }
     }
+
+    .delete-btn.logout {
+        border-radius: 20px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    // .items-container.mobil .nav-items{
+    //     display: flex;
+    //     flex-direction: column;
+    // }
+    // .items-container.mobil{
+    //     position: absolute;
+    //     top: 40px;
+    //     right: 0;
+    //     left: 0;
+    //     flex-direction: column;
+    //     background-color: rgba(0, 0, 0, 0.9);
+    //     padding: 20px;
+    // }
+    .button{
+        display: block!important;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        padding: 4px;
+        width: 30px;
+    }
+    .delete-btn.logout {
+        margin-top: 10px;
+    }
+    .nav-items{
+        display: none!important;
+    }
+    .delete-btn.logout{
+        display: none!important;
+    }
+
 }

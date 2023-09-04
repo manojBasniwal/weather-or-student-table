@@ -20,19 +20,19 @@
             background-color: white;
             padding: 50px 25px;
 
-            .close-button {
-                position: absolute;
-                top: 12px;
-                right: 20px;
-                width: 20px;
-                height: 20px;
-                background-color: red;
-                border-radius: 50%;
-                color: white;
-                display: flex;
-                justify-content: center;
-                cursor: pointer;
-            }
+            // .close-button {
+            //     position: absolute;
+            //     top: 12px;
+            //     right: 20px;
+            //     width: 20px;
+            //     height: 20px;
+            //     background-color: red;
+            //     border-radius: 50%;
+            //     color: white;
+            //     display: flex;
+            //     justify-content: center;
+            //     cursor: pointer;
+            // }
 
             .form-section {
                 display: grid;
@@ -63,24 +63,9 @@
             .button-section {
                 display: flex;
                 justify-content: end;
-                .button {
-                    // display: block;
-                    // margin: auto;
-                    // padding: 7px 13px;
-                    // font-size: 18px;
-                    // border-radius: 5px;
-                    // border: 1px solid black;
-                    // cursor: pointer;
-
-
-                    // margin: auto;
-                    padding: 7px 13px;
+                .success-btn.submit {
                     font-size: 18px;
-                    border-radius: 5px;
-                    cursor: pointer;
                     background-color: blue;
-                    color: white;
-                    border: none;
 
                     &:hover {
                         color: white;
@@ -89,9 +74,9 @@
                     }
                 }
 
-                .button.close {
-                    color: white;
-                    background-color: red;
+                .delete-btn {
+                    padding: 7px 13px;
+                    font-size: 18px;
                     margin-left: 10px;
                 }
             }
