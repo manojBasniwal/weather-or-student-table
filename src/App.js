@@ -1,7 +1,7 @@
 import Login from 'screens/login';
 import Home from './screens/home';
 // import Navbar from 'components/navbar';
-import {HashRouter,Routes,Route} from "react-router-dom";
+import {HashRouter,Routes,Route, BrowserRouter} from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import LoginHandle from 'components/login-handle';
@@ -10,7 +10,7 @@ import Weather from 'screens/weather';
 function App() {
   return (
     <div>
-      <HashRouter>
+      <BrowserRouter>
       <ToastContainer />
       <LoginHandle/>
       <Routes>
@@ -18,7 +18,7 @@ function App() {
         <Route exact path="login" element={<Login/>}/>
         <Route exact path="weather" element={<Weather/>}/>
       </Routes>
-      </HashRouter>
+      </BrowserRouter>
     </div>
   );
 }

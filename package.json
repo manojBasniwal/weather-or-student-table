@@ -2,7 +2,6 @@
   "name": "weather-or-student-table",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://manojbasniwal.github.io/weather-or-student-table",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
