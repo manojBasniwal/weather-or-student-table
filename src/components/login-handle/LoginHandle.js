@@ -12,7 +12,7 @@ function LoginHandle() {
         if(!loginData || (loginData?.name !== LOGIN_DETAILS.name && loginData?.password !== LOGIN_DETAILS.password)){
             navigate('/login')
         }else{
-            if(navigate === location){
+            if(location.pathname === "/login"){
                 navigate('/')
             }
             // navigate('/')
